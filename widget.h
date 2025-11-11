@@ -2,6 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QLineEdit>
 
 class Widget : public QWidget
 {
@@ -10,5 +11,13 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+
+private slots:
+    void onButtonClicked(const QString &text);
+
+private:
+    QLineEdit *display;
+    double calculate(const QString &expr);
 };
-#endif // WIDGET_H
+
+#endif
